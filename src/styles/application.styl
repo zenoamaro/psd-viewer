@@ -1,0 +1,29 @@
+body
+.application
+	height: 100vh
+	overflow: hidden
+
+.application
+	display: flex
+	flex-direction: row
+	background: #F0F0F0
+
+.application.is-accepting
+.application.is-loading
+	align-items: center
+	justify-content: center
+
+.application.is-ready
+	align-items: stretch
+	justify-content: stretch
+
+.application--loader::before
+	display: block
+	content: " "
+	width: 52px
+	height: 8px
+	mergin-bottom: 15px
+	border-radius: 999px
+	border: solid thick gray
+	animation: rotate infinite 1.5s
+	background: white

@@ -1,0 +1,10 @@
+*~
+~*
+*.tmp
+*.log
+*.bak
+*.orig
+.DS_Store
+tmp
+node_modules
+coverage

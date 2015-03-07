@@ -1,0 +1,27 @@
+{
+
+	"source": {
+		"include": ["./src"],
+		"includePattern": ".+\\.js(doc)?$",
+		"excludePattern": "(^|\\/|\\\\)_"
+	},
+
+	"tags": {
+		"allowUnknownTags": true
+	},
+
+	"opts": {
+		"recurse": true,
+		"destination": "./docs/",
+		"template": "./node_modules/jsdoc-baseline"
+	},
+
+	"templates": {
+		"cleverLinks": true,
+		"monospaceLinks": false
+	},
+
+	"plugins": [
+		"plugins/markdown"
+	]
+}

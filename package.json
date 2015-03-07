@@ -1,0 +1,80 @@
+{
+  "name": "psd-viewer",
+  "version": "0.1.0",
+  "description": "A simple photoshop document viewer",
+  "author": "zenoamaro <zenoamaro@gmail.com>",
+  "license": "MIT",
+
+  "homepage": "https://github.com/zenoamaro/psd-viewer",
+  "private": true,
+
+  "bugs": {
+    "url": "https://github.com/zenoamaro/psd-viewer/issues",
+    "email": "zenoamaro@gmail.com"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zenoamaro/psd-viewer.git"
+  },
+
+  "main": "lib/index.js",
+  "browser": "dist/scripts.js",
+
+  "scripts": {
+    "test": "make test",
+    "docs": "make docs",
+    "build": "make build",
+    "clean": "make clean"
+  },
+
+  "engines": {
+    "node": ">= 0.11.x",
+    "iojs": ">= 1.0.x"
+  },
+
+  "keywords": [
+    "psd",
+    "layers",
+    "images"
+  ],
+
+  "dependencies": {
+    "react": "^0.12.2"
+  },
+
+  "devDependencies": {
+    "babel": "^4.6.6",
+    "babel-core": "^4.6.6",
+    "babel-eslint": "^1.0.13",
+    "babel-loader": "^4.0.0",
+    "benchmark": "^1.0.0",
+    "csso": "^1.3.11",
+    "eslint": "^0.15.1",
+    "gulp": "^3.8.11",
+    "gulp-accord": "^0.1.0",
+    "gulp-if": "^1.2.5",
+    "gulp-rename": "^1.2.0",
+    "gulp-util": "^3.0.4",
+    "gulp-watch": "^4.1.1",
+    "gulp-webpack": "^1.3.0",
+    "gulp-webserver": "^0.9.0",
+    "istanbul": "^0.3.7",
+    "jsdoc": "^3.3.0-beta1",
+    "json-loader": "^0.5.1",
+    "lodash": "^3.3.1",
+    "mocha": "^2.1.0",
+    "nib": "^1.1.0",
+    "rimraf": "^2.3.1",
+    "should": "^5.1.0",
+    "stylus": "^0.50.0",
+    "webpack": "^1.7.2"
+  },
+
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ]
+}

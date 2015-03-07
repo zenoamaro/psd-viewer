@@ -1,0 +1,2 @@
+// Run suites
+require('./module');
