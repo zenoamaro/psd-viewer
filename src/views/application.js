@@ -29,8 +29,7 @@ export default React.createClass({
 	},
 
 	highlightLayer(layer) {
-		let layerId = getLayerId(layer);
-		this.setState({ highlightedLayer: layerId });
+		this.setState({ highlightedLayer: layer });
 	},
 
 	currentState() {

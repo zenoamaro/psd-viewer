@@ -2,6 +2,7 @@
 import React from 'react';
 import cx from 'react/lib/cx';
 import getLayerId from '../utils/get-layer-id';
+import getLayerOffset from '../utils/get-layer-offset';
 let T = React.PropTypes;
 
 
@@ -9,7 +10,6 @@ let Layer = React.createClass({
 
 	propTypes: {
 		layer: T.object.isRequired,
-		highlightedLayer: T.string,
 		scale: T.number,
 	},
 
@@ -44,16 +44,7 @@ let Layer = React.createClass({
 
 	getStyle(layer) {
 		let scale = this.props.scale;
-		let offsets = layer.parent?
-			layer.parent.coords
-			: { left:0, top:0 };
-		return {
-			position: 'absolute',
-			left:   scale * (layer.left - offsets.left),
-			top:    scale * (layer.top - offsets.top),
-			width:  scale * (layer.width),
-			height: scale * (layer.height),
-		};
+		return getLayerOffset(layer, scale);
 	},
 
 	isVisible(layer) {
@@ -61,16 +52,11 @@ let Layer = React.createClass({
 		       && layer.visible() !== false;
 	},
 
-	isHighlighted(layer) {
-		return getLayerId(layer) === this.props.highlightedLayer;
-	},
-
 	getClassName(layer) {
 		return cx({
 			'layer':    true,
 			'is-group': layer.isGroup(),
 			'is-layer': layer.isLayer(),
-			'is-highlighted': this.isHighlighted(layer),
 		});
 	},
 
@@ -97,8 +83,7 @@ let Layer = React.createClass({
 			<Layer key={getLayerId(layer)}
 			       layer={layer}
 			       scale={this.props.scale}
-			       visible={this.isVisible(layer)}
-			       highlightedLayer={this.props.highlightedLayer} />
+			       visible={this.isVisible(layer)} />
 		);
 	},
 
